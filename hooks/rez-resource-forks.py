@@ -25,7 +25,6 @@ for file in all_files:
             "Rez",
             "-isysroot", sdk_path,
             "-o", file_path,
-            "-a", # Append, hopefully preserving the data fork
             "-m", # Don't change modification date
             "Carbon.r",
             file_rpath])
