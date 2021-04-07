@@ -19,8 +19,7 @@ cp hooks/rez-resource-forks.py .git/hooks/post-merge
 
 ## Notes
 
-When doing the initial checkout you may need to manually run the `hooks/rez-resource-forks.py` script to
-
+After doing the initial checkout of a repo with such files, you may need to manually run the `.git/hooks/post-checkout` script manually (because the hooks were not yet set).
 
 ## Local Development
 
