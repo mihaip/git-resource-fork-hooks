@@ -1,6 +1,6 @@
 # Git Resource Fork Hooks
 
-Helper scripts to allow Git to understand files with resource forks, as commonly used in classic Mac OS development. The scripts rely on the `Rez` and `DeRez` tools that still (as of 2021) ship with Xcode, which turn can convert resource forks to a textual (`.r`) format. Besides allowing cross-platform transport of resource forks, `.r` files diff nicely, especially if using resource definitions to generate more structured output.
+Helper scripts to allow Git to understand files with resource forks, as commonly used in classic Mac OS development. The scripts rely on the `Rez` and `DeRez` tools that still (as of 2021) ship with Xcode, which turn can convert resource forks to a textual (`.r`) format. Besides allowing cross-platform transport of resource forks, `.r` files diff nicely, especially if using resource definitions to generate more structured output ([example](https://github.com/mihaip/git-resource-fork-hooks/commit/47256b609872500200f4957cc3658b967071d36b)).
 
 ## Installation
 
