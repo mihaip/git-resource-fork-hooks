@@ -10,10 +10,12 @@ while os.path.basename(root_dir) != ".git":
 root_dir = os.path.abspath(os.path.dirname(root_dir))
 
 sdk_path = subprocess.check_output(["xcrun", "--sdk", "macosx", "--show-sdk-path"]).strip()
-# Ideally we'd use something like `git diff --cached --name-only --diff-filter=ACM` to
-# only do this for modified files, but resource fork-only changes do not show up there,
-# so we need to do this for all files.
-all_files = subprocess.check_output(["git", "ls-tree", "--name-only", "-r", "HEAD"]).split("\n")
+# Ideally `git diff --cached --name-only` would be enough, but it will not
+# detect modifications that only happen to the resource forks, so we
+# need to run this over all existing files too.
+all_files = set(
+    subprocess.check_output(["git", "ls-tree", "--name-only", "-r", "HEAD"]).split("\n") +
+    subprocess.check_output(["git", "diff", "--cached", "--name-only"]).split("\n"))
 resource_fork_count = 0
 for file in all_files:
     file_path = os.path.join(root_dir, file)

@@ -3,7 +3,7 @@
 import os.path
 import subprocess
 
-# We're most likely in .git/hooks/pre-commit, find the root of the repo
+# We're most likely in .git/hooks/post-merge, find the root of the repo
 root_dir = __file__
 while os.path.basename(root_dir) != ".git":
     root_dir = os.path.dirname(root_dir)
